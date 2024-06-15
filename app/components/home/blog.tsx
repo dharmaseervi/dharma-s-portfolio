@@ -52,7 +52,8 @@ const fullStackContent = [
       description: (
         <>
           <p>
-            Next.js has gained significant popularity among developers for building modern web applications. In this blog, we&aposll delve into what Next.js is, its key features, advantages for developers, and practical examples of its implementation.
+            Next.js has gained significant popularity among developers for building modern web applications. In this blog, we&apos;ll
+            delve into what Next.js is, its key features, advantages for developers, and practical examples of its implementation.
           </p>
           <h4 className="font-bold mb-2">Key Features:</h4>
           <ul className="list-disc list-inside mb-4">
@@ -89,7 +90,8 @@ const fullStackContent = [
       description: (
         <>
           <p>
-            The MERN stack—MongoDB, Express.js, React, and Node.js—is a popular choice for full-stack web development. In this guide, we&aposll explore each component of the MERN stack, their roles, advantages, and how they work together to build scalable web applications.
+            The MERN stack—MongoDB, Express.js, React, and Node.js—is a popular choice for full-stack web development. In this guide, we&apos;ll
+            explore each component of the MERN stack, their roles, advantages, and how they work together to build scalable web applications.
           </p>
           <h4 className="font-bold mb-2">Components of the MERN Stack:</h4>
           <ul className="list-disc list-inside mb-4">
@@ -126,7 +128,8 @@ const fullStackContent = [
       description: (
         <>
           <p>
-            Web development is constantly evolving with new tools and technologies emerging to streamline processes and enhance user experiences. In this blog, we&aposll explore some of the latest tools and technologies gaining traction in the industry and how they are reshaping modern web development practices.
+            Web development is constantly evolving with new tools and technologies emerging to streamline processes and enhance user experiences. In this blog, we&apos;ll
+            explore some of the latest tools and technologies gaining traction in the industry and how they are reshaping modern web development practices.
           </p>
           <h4 className="font-bold mb-2">New Tools and Technologies:</h4>
           <ul className="list-disc list-inside mb-4">
@@ -134,7 +137,7 @@ const fullStackContent = [
             <li>GraphQL: Query language for APIs</li>
             <li>Deno: Secure runtime for JavaScript and TypeScript</li>
             <li>Vite: Next-generation frontend build tool</li>
-            <li>Jamstack Architecture focusing on JavaScript, APIs, and Markup</li>
+            <li>Jamstack: Architecture focusing on JavaScript, APIs, and Markup</li>
           </ul>
           <h4 className="font-bold mb-2">Benefits and Use Cases:</h4>
           <ul className="list-disc list-inside mb-4">
@@ -144,7 +147,7 @@ const fullStackContent = [
             <li>Vite: Fast development and optimized build times</li>
             <li>Jamstack: Improved site performance, security, and scalability</li>
           </ul>
-          <h4 className="font-bold mb-2">Integration and Adoption</h4>
+          <h4 className="font-bold mb-2">Integration and Adoption:</h4>
           <ul className="list-disc list-inside mb-4">
             <li>Tool Integration with React and other frameworks</li>
             <li>Adoption Strategies based on project requirements</li>
