@@ -76,7 +76,7 @@ const fullStackContent = [
             <li>Dashboard Application</li>
           </ul>
           <p>
-            Next.js is a powerful framework for modern web development, offering robust features and enhancing developer productivity. Whether you're building a simple website or a complex web application, Next.js provides the tools needed to deliver exceptional user experiences efficiently.
+            Next.js is a powerful framework for modern web development, offering robust features and enhancing developer productivity. Whether you&apos;re building a simple website or a complex web application, Next.js provides the tools needed to deliver exceptional user experiences efficiently.
           </p>
         </>
       ),
@@ -114,7 +114,7 @@ const fullStackContent = [
             <li>E-commerce Solutions</li>
           </ul>
           <p>
-            The MERN stack offers a powerful combination of technologies for building modern web applications. Whether you're a startup, enterprise, or developer looking to expand your skill set, mastering the MERN stack provides the tools needed to create robust, scalable, and efficient web solutions.
+            The MERN stack offers a powerful combination of technologies for building modern web applications. Whether you&apos;re a startup, enterprise, or developer looking to expand your skill set, mastering the MERN stack provides the tools needed to create robust, scalable, and efficient web solutions.
           </p>
         </>
       ),
