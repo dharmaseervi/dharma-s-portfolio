@@ -2,19 +2,10 @@
 import { cn } from "@/utils/cn";
 import React from "react";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
-import {
-  IconArrowWaveRightUp,
-  IconBoxAlignRightFilled,
-  IconBoxAlignTopLeft,
-  IconClipboardCopy,
-  IconFileBroken,
-  IconSignature,
-  IconTableColumn,
-} from "@tabler/icons-react";
 
 export default function Grid() {
   return (
-    <BentoGrid className="max-w-4xl mx-auto">
+    <BentoGrid className="max-w-4xl mx-auto grid grid-cols-8 gap-4">
       {gridItems.map((item) => (
         <BentoGridItem
           key={item.id}
@@ -23,13 +14,14 @@ export default function Grid() {
           className={item.className}
           img={item.img}
           imgClassName={item.imgClassName}
-          titleClassName={item.titleClassName}
+          titleClassName="text-center"
           spareImg={item.spareImg}
         />
       ))}
     </BentoGrid>
   );
 }
+
 
 
 export const gridItems = [
