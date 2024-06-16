@@ -8,8 +8,8 @@ import { TracingBeam } from "../ui/tracing-beam";
 export function TracingBeamDemo() {
 
   return (
-    <TracingBeam className="px-6">
-      <div className="max-w-2xl mx-auto antialiased pt-4 relative">
+    <TracingBeam className="px-6 ">
+      <div className="max-w-2xl mx-auto antialiased pt-4 relative ">
         {fullStackContent.map((item, index) => (
           <div key={`content-${index}`} className="mb-10">
             <div className="flex items-center mb-4">

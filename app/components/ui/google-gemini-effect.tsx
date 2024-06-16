@@ -46,15 +46,15 @@ export const GoogleGeminiEffect = (
   }) => {
   return (
     <div className={cn("sticky top-80", className)}>
-      <div className="text-lg md:text-7xl mx-40 font-normal  text-start bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">
+      <div className="text-lg md:text-7xl flex justify-center items-center font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300 ">
         {title || <TypewriterEffectSmooth words={words} />}
       </div>
-      <p className="text-lg md:text-lg font-normal text-start text-neutral-400 mt-2s max-w-full mx-40 ">
+      <p className="text-xs md:text-xl font-normal text-center text-neutral-400 mt-4 max-w-lg mx-auto">
         {description ||
           `Meet Manu Arora, the self-proclaimed code wizard who can turn caffeine into beautiful websites. His passion for building clean and functional designs is only rivaled by his passion for finding the perfect GIF to express his excitement.`}
       </p>
       <div className="w-full h-[890px] -top-60 md:-top-40  flex items-center justify-center bg-red-transparent absolute ">
-        <button className="font-bold bg-white rounded-full md:px-4 md:py-2 px-2 py-1 md:mt-24 mt-8 z-30 md:text-base text-black text-xs  w-fit mx-auto ">
+        <button className="font-bold bg-white  md:px-4 md:py-2 px-4 py-2 md:mt-24 mt-8 z-30 md:text-base text-black text-xs  w-fit mx-auto ">
           Resume
         </button>
       </div>

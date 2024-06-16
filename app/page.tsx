@@ -8,13 +8,13 @@ import { InfiniteMovingCardsDemo } from './components/home/techstackCard';
 
 export default function Home() {
   return (
-    <main className=" ">
-      <HeroSection />
-      <Grid />
-      <ToolExperince />
-      <Project />
-      <TracingBeamDemo />
-      <InfiniteMovingCardsDemo />
+    <main className="relative bg-black-100   ">
+        <HeroSection />
+        <Grid />
+        <ToolExperince />
+        <Project />
+        <TracingBeamDemo />
+        <InfiniteMovingCardsDemo />
     </main>
   );
 }

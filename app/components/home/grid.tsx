@@ -2,33 +2,39 @@
 import React from "react";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 
-export default function Grid() {
+const Grid = () => {
   return (
-    <BentoGrid className="max-w-4xl mx-auto grid grid-cols-8 gap-4">
-      {gridItems.map((item) => (
-        <BentoGridItem
-          key={item.id}
-          title={item.title}
-          description={item.description}
-          className={item.className}
-          img={item.img}
-          imgClassName={item.imgClassName}
-          titleClassName="text-center"
-          spareImg={item.spareImg}
-        />
-      ))}
-    </BentoGrid>
+<div className="min-h-screen w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">
+      {/* Radial gradient for the container to give a faded look */}
+      <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+      <BentoGrid className="w-full py-20">
+        {gridItems.map((item, i) => (
+          <BentoGridItem
+            id={item.id}
+            key={i}
+            title={item.title}
+            description={item.description}
+            className={item.className}
+            img={item.img}
+            imgClassName={item.imgClassName}
+            titleClassName={item.titleClassName}
+            spareImg={item.spareImg}
+          />
+        ))}
+      </BentoGrid>
+    </div>
+
   );
-}
+};
 
-
+export default Grid;
 
 export const gridItems = [
   {
     id: 1,
     title: "I prioritize client collaboration, fostering open communication ",
     description: "",
-    className: "lg:col-span-2  md:col-span-6 md:row-span-6 lg:min-h-[40vh]  ",
+    className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
     titleClassName: "justify-end",
     img: "/b1.svg",
