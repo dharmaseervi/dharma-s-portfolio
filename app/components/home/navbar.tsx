@@ -21,16 +21,16 @@ export default function NavbarMenu() {
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   const { theme, setTheme } = useTheme();
-  
+
   return (
     <div className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}>
       <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="Services">
+        <MenuItem setActive={setActive} active={active} item="works">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/web-dev">Web Development</HoveredLink>
-            <HoveredLink href="/interface-design">Interface Design</HoveredLink>
-            <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
-            <HoveredLink href="/branding">Branding</HoveredLink>
+            <p>Web Dev</p>
+            <p >Interface Design</p>
+            <p >Search Engine Optimization</p>
+            <p >App dev</p>
           </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Projects">
@@ -78,7 +78,7 @@ function Navbar({ className }: { className?: string }) {
             />
           </motion.div>
         </MenuItem>
-        <HoveredLink href="#blog">Blog</HoveredLink>
+        <HoveredLink setActive={setActive} active={active} href="#blog">Blog</HoveredLink>
         <MenuItem setActive={setActive} active={active} item="theme">
           <div className="flex flex-col space-y-4 text-sm">
             <motion.button
