@@ -3,6 +3,7 @@ import { cn } from "@/utils/cn";
 import { motion, MotionValue } from "framer-motion";
 import React from "react";
 import { TypewriterEffectSmooth } from "./typewritter";
+import { Button } from "./moving-border";
 
 const transition = {
   duration: 0,
@@ -44,19 +45,40 @@ export const GoogleGeminiEffect = (
     description?: string;
     className?: string;
   }) => {
+
+  const handleDownload = () => {
+    const downloadLink = document.createElement("a");
+    downloadLink.href = '/resume/dharma-resume.pdf'; // Specify the path to your resume file
+    downloadLink.download = 'dharma-resume.pdf'; // Specify the file name for download
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+  };
+
+
   return (
-    <div className={cn("sticky top-80", className)}>
+    <div className={cn("sticky top-80 ", className)}>
       <div className="text-lg md:text-7xl flex justify-center items-center font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300 ">
         {title || <TypewriterEffectSmooth words={words} />}
       </div>
-      <p className="text-xs md:text-xl font-normal text-center text-neutral-400 mt-4 max-w-lg mx-auto">
+      <p className="text-xs md:text-xl font-normal text-center text-white dark:text-neutral-400 mt-4 max-w-lg mx-auto">
         {description ||
-          `Meet Manu Arora, the self-proclaimed code wizard who can turn caffeine into beautiful websites. His passion for building clean and functional designs is only rivaled by his passion for finding the perfect GIF to express his excitement.`}
+          `Meet Dharma Seervi a passionate software engineer who loves to create elegant and functional websites. His dedication to crafting clean designs is matched only by his knack for finding the perfect GIF to capture every moment.`}
       </p>
+
       <div className="w-full h-[890px] -top-60 md:-top-40  flex items-center justify-center bg-red-transparent absolute ">
-        <button className="font-bold bg-white  md:px-4 md:py-2 px-4 py-2 md:mt-24 mt-8 z-30 md:text-base text-black text-xs  w-fit mx-auto ">
-          Resume
-        </button>
+        <div className="font-bold  md:px-4 md:py-2 px-4 py-2 md:mt-24 mt-8 z-30 md:text-base text-black text-xs  w-fit mx-auto ">
+          <Button
+            onClick={handleDownload}
+            borderRadius="1.75rem"
+            className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800 gap-2"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+            </svg>
+            Resume
+          </Button>
+        </div>
       </div>
       <svg
         width="1440"

@@ -1,26 +1,30 @@
 "use client";
 import React from "react";
-
 import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "../ui/canvas-reveal-effect";
+import MagicButton from "./magic-button";
+import { useRouter } from "next/navigation";
+
+
 
 export default function Project() {
+
   return (
     <>
-      <div className="py-20 grid lg:grid-cols-3 items-center justify-center bg-white dark:bg-black w-full gap-6 mx-auto px-8">
-        <Card title="Nextcart || E-commerce website" icon={<img src="/nextcart.png" alt="next cart" />}>
+      <div className="py-20 grid lg:grid-cols-3 items-center justify-center bg-white dark:bg-black-100 w-full gap-6 mx-auto px-8">
+        <Card href="https://mern-stack-ecommerce-orpin.vercel.app" title="Nextcart || E-commerce website" icon={<img src="/nextcart.png" alt="next cart" />}>
           <CanvasRevealEffect
             animationSpeed={5.1}
             containerClassName="bg-yellow-900"
           />
         </Card>
-        <Card title="portfolio" icon={<img src="/portfolio.png" alt="portfolio" />}>
+        <Card href="https://dharma-portfolio-inky.vercel.app/" title="portfolio" icon={<img src="/portfolio.png" alt="portfolio" />}>
           <CanvasRevealEffect
             animationSpeed={5.1}
             containerClassName="bg-emerald-900"
           />
         </Card>
-        <Card title="caresync pro" icon={<img src="/caresyncpro.png" alt="care sync pro" />}>
+        <Card href="https://caresync-pro.onrender.com" title="caresync pro" icon={<img src="/caresyncpro.png" alt="care sync pro" />}>
           <CanvasRevealEffect
             animationSpeed={3}
             containerClassName="bg-black"
@@ -33,7 +37,7 @@ export default function Project() {
           {/* Radial gradient for the cute fade */}
           <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
         </Card>
-        <Card title="WEATHER APP" icon={<img src="/weather.png" alt="weather app" />}>
+        <Card href="https://weather-app-ruddy-seven.vercel.app/" title="WEATHER APP" icon={<img src="/weather.png" alt="weather app" />}>
           <CanvasRevealEffect
             animationSpeed={3}
             containerClassName="bg-black"
@@ -46,14 +50,14 @@ export default function Project() {
           {/* Radial gradient for the cute fade */}
           <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
         </Card>
-        <Card title="next cart admin page" icon={<img src="/nextcartadmin.png" alt="next admin page" />}>
+        <Card href="https://nextcart-admin-three.vercel.app" title="next cart admin page" icon={<img src="/nextcartadmin.png" alt="next admin page" />}>
           <CanvasRevealEffect
             animationSpeed={3}
             containerClassName="bg-red-600"
             colors={[[125, 211, 252]]}
           />
         </Card>
-        <Card title="Hardware shop Website" icon={<img src="/lpc.png" alt="laxmi pipe centre" />}>
+        <Card href="https://www.laxmipipecentre.com" title="Hardware shop Website" icon={<img src="/lpc.png" alt="laxmi pipe centre" />}>
           <CanvasRevealEffect
             animationSpeed={3}
             containerClassName="bg-sky-600"
@@ -69,12 +73,19 @@ const Card = ({
   title,
   icon,
   children,
+  href,
 }: {
   title: string;
+  href: string;
   icon: React.ReactNode;
   children?: React.ReactNode;
 }) => {
   const [hovered, setHovered] = React.useState(false);
+  const router = useRouter(); 
+  const handleLinkButton = () => {
+    router.push(href); 
+  };
+
   return (
     <div
       onMouseEnter={() => setHovered(true)}
@@ -98,13 +109,23 @@ const Card = ({
         )}
       </AnimatePresence>
 
-      <div className="relative z-20">
+      <div className="relative z-20 flex justify-center items-center flex-col ">
         <div className="text-center group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200 w-full  mx-auto flex items-center justify-center">
           {icon}
         </div>
         <h2 className="dark:text-white text-xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
           {title}
         </h2>
+        <MagicButton
+          title={"view"}
+          icon={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+          </svg>
+          }
+          position="left"
+          handleClick={handleLinkButton}
+          otherClasses="!bg-[#161A31]"
+        />
       </div>
     </div>
   );

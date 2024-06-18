@@ -1,74 +1,105 @@
 "use client";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "../ui/navbar-menu";
 import { cn } from "@/utils/cn";
 import { useTheme } from "next-themes";
+import Link from "next/link";
+
+const transition = {
+  type: "spring",
+  damping: 20,
+  stiffness: 100,
+};
 
 export default function NavbarMenu() {
-    return (
-        <Navbar className="top-2" />
-    );
+  return (
+    <Navbar className="top-2" />
+  );
 }
 
 function Navbar({ className }: { className?: string }) {
-    const [active, setActive] = useState<string | null>(null);
-    const { theme, setTheme } = useTheme()
-    return (
-        <div
-            className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50 ", className)}
-        >
-            <Menu setActive={setActive}>
-                <MenuItem setActive={setActive} active={active} item="Services">
-                    <div className="flex flex-col space-y-4 text-sm">
-                        <HoveredLink href="/web-dev">Web Development</HoveredLink>
-                        <HoveredLink href="/interface-design">Interface Design</HoveredLink>
-                        <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
-                        <HoveredLink href="/branding">Branding</HoveredLink>
-                    </div>
-                </MenuItem>
-                <MenuItem setActive={setActive} active={active} item="Products">
-                    <div className="  text-sm grid grid-cols-2 gap-10 p-4">
-                        <ProductItem
-                            title="Algochurn"
-                            href="https://algochurn.com"
-                            src="https://assets.aceternity.com/demos/algochurn.webp"
-                            description="Prepare for tech interviews like never before."
-                        />
-                        <ProductItem
-                            title="Tailwind Master Kit"
-                            href="https://tailwindmasterkit.com"
-                            src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-                            description="Production ready Tailwind css components for your next project"
-                        />
-                        <ProductItem
-                            title="Moonbeam"
-                            href="https://gomoonbeam.com"
-                            src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                            description="Never write from scratch again. Go from idea to blog in minutes."
-                        />
-                        <ProductItem
-                            title="Rogue"
-                            href="https://userogue.com"
-                            src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-                            description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
-                        />
-                    </div>
-                </MenuItem>
-                <MenuItem setActive={setActive} active={active} item="Pricing">
-                    <div className="flex flex-col space-y-4 text-sm">
-                        <HoveredLink href="/hobby">Hobby</HoveredLink>
-                        <HoveredLink href="/individual">Individual</HoveredLink>
-                        <HoveredLink href="/team">Team</HoveredLink>
-                        <HoveredLink href="/enterprise">Enterprise</HoveredLink>
-                    </div>
-                </MenuItem>
-                <MenuItem setActive={setActive} active={active} item="theme">
-                    <div className="flex flex-col space-y-4 text-sm">
-                        <button onClick={() => setTheme('light')}>Light Mode</button>
-                        <button onClick={() => setTheme('dark')}>Dark Mode</button>
-                    </div>
-                </MenuItem>
-            </Menu>
-        </div>
-    );
+  const [active, setActive] = useState<string | null>(null);
+  const { theme, setTheme } = useTheme();
+  
+  return (
+    <div className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}>
+      <Menu setActive={setActive}>
+        <MenuItem setActive={setActive} active={active} item="Services">
+          <div className="flex flex-col space-y-4 text-sm">
+            <HoveredLink href="/web-dev">Web Development</HoveredLink>
+            <HoveredLink href="/interface-design">Interface Design</HoveredLink>
+            <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
+            <HoveredLink href="/branding">Branding</HoveredLink>
+          </div>
+        </MenuItem>
+        <MenuItem setActive={setActive} active={active} item="Projects">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={transition}
+            className="text-sm grid lg:grid-cols-2 lg:w-full lg:gap-10 gap-4 p-4"
+          >
+            <ProductItem
+              title="Nextcart"
+              href="https://mern-stack-ecommerce-orpin.vercel.app"
+              src="/nextcart.png"
+              description="A comprehensive e-commerce platform built with the MERN stack."
+            />
+            <ProductItem
+              title="Laxmi Pipe Centre"
+              href="https://www.laxmipipecentre.com"
+              src="/lpc.png"
+              description="Official website for Laxmi Pipe Centre, featuring products and services."
+            />
+            <ProductItem
+              title="Dharmaseervi Portfolio"
+              href="https://dharma-portfolio-inky.vercel.app/"
+              src="/portfolio.png"
+              description="Showcase of my projects and skills in web development."
+            />
+            <ProductItem
+              title="Nextcart Admin"
+              href="https://nextcart-admin-three.vercel.app"
+              src="/nextcartadmin.png"
+              description="Admin panel for managing products and orders in Nextcart."
+            />
+            <ProductItem
+              title="Weather App"
+              href="https://weather-app-ruddy-seven.vercel.app/"
+              src="/weather.png"
+              description="A web application providing real-time weather updates."
+            />
+            <ProductItem
+              title="Caresync Pro"
+              href="https://caresync-pro.onrender.com"
+              src="/caresyncpro.png"
+              description="A platform for syncing and managing healthcare data efficiently."
+            />
+          </motion.div>
+        </MenuItem>
+        <HoveredLink href="#blog">Blog</HoveredLink>
+        <MenuItem setActive={setActive} active={active} item="theme">
+          <div className="flex flex-col space-y-4 text-sm">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setTheme('light')}
+              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full"
+            >
+              Light Mode
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setTheme('dark')}
+              className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded-full"
+            >
+              Dark Mode
+            </motion.button>
+          </div>
+        </MenuItem>
+      </Menu>
+    </div>
+  );
 }
