@@ -78,7 +78,7 @@ function Navbar({ className }: { className?: string }) {
             />
           </motion.div>
         </MenuItem>
-        <HoveredLink setActive={setActive} active={active} href="#blog">Blog</HoveredLink>
+        <HoveredLink href="#blog">Blog</HoveredLink>
         <MenuItem setActive={setActive} active={active} item="theme">
           <div className="flex flex-col space-y-4 text-sm">
             <motion.button

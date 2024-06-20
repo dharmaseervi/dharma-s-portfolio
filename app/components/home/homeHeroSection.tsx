@@ -1,9 +1,19 @@
 "use client";
 import { useScroll, useTransform } from "framer-motion";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { GoogleGeminiEffect } from "../ui/google-gemini-effect";
 
 export default function HeroSection() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    // Check if window and document are defined (client-side)
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      setIsClient(true);
+    }
+  }, []);
+
+
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -16,6 +26,9 @@ export default function HeroSection() {
   const pathLengthFourth = useTransform(scrollYProgress, [0, 0.8], [0.05, 1.2]);
   const pathLengthFifth = useTransform(scrollYProgress, [0, 0.8], [0, 1.2]);
 
+  if (!isClient) {
+    return null; // or a loading indicator
+  }
   return (
     <div
       className="h-[400vh] bg-black w-full dark:border dark:border-white/[0.1] rounded-md relative pt-40 overflow-clip"
