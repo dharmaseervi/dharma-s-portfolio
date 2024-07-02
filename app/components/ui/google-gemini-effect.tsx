@@ -68,7 +68,7 @@ export const GoogleGeminiEffect = (
 
       <div className="w-full h-[890px] -top-60 md:-top-40  flex items-center justify-center bg-red-transparent absolute ">
         <div className="font-bold  md:px-4 md:py-2 px-4 py-2 md:mt-24 mt-8 z-30 md:text-base text-black text-xs  w-fit mx-auto ">
-          {/* <Button
+          <Button
             onClick={handleDownload}
             borderRadius="1.75rem"
             className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800 gap-2"
@@ -77,7 +77,7 @@ export const GoogleGeminiEffect = (
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
             </svg>
             Resume
-          </Button> */}
+          </Button>
         </div>
       </div>
       <svg
