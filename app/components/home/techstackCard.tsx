@@ -2,7 +2,6 @@
 import React from "react";
 import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
 import { Spotlight } from "../ui/Spotlight";
-import MagicButton from "./magic-button";
 import Image from "next/image"; // Import the Image component from next/image
 import Link from "next/link";
 import { Boxes } from "../ui/background-boxes";
