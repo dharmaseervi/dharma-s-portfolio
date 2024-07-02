@@ -14,7 +14,7 @@ export default function Home() {
       <ToolExperince />
       <Project />
       <section id="blog">
-        {/* <TracingBeamDemo /> */}
+        <TracingBeamDemo />
       </section>
       <InfiniteMovingCardsDemo />
     </main>
