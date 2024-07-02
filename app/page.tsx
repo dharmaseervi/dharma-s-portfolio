@@ -9,12 +9,12 @@ import { InfiniteMovingCardsDemo } from './components/home/techstackCard';
 export default function Home() {
   return (
     <main className="relative dark:bg-black-100 bg-white   ">
-      {/* <HeroSection /> */}
+      <HeroSection />
       <Grid />
       <ToolExperince />
       <Project />
       <section id="blog">
-        <TracingBeamDemo />
+        {/* <TracingBeamDemo /> */}
       </section>
       <InfiniteMovingCardsDemo />
     </main>
