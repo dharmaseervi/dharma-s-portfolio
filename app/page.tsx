@@ -1,22 +1,23 @@
-import { TracingBeamDemo } from './components/home/blog';
-import ToolExperince from './components/home/experince';
-import Grid from './components/home/grid';
-import HeroSection from './components/home/homeHeroSection'
-import Project from './components/home/project';
-import { InfiniteMovingCardsDemo } from './components/home/techstackCard';
-
+import Nav from "./components/v2/Nav";
+import CommandPalette from "./components/v2/interactive/CommandPalette";
+import Hero from "./components/v2/Hero";
+import Work from "./components/v2/Work";
+import { About, NowBuilding, Stack, Contact, Footer } from "./components/v2/Sections";
 
 export default function Home() {
   return (
-    <main className="relative dark:bg-black-100 bg-white   ">
-      <HeroSection />
-      <Grid />
-      <ToolExperince />
-      <Project />
-      <section id="blog">
-        <TracingBeamDemo />
-      </section>
-      <InfiniteMovingCardsDemo />
-    </main>
+    <>
+      <Nav />
+      <CommandPalette />
+      <main>
+        <Hero />
+        <Work />
+        <NowBuilding />
+        <About />
+        <Stack />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
