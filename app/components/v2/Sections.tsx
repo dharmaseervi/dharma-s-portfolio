@@ -69,7 +69,7 @@ export function NowBuilding() {
 }
 
 const groups = [
-  { name: "Backend", items: ["Go (Gin)", "PostgreSQL", "REST API design", "PDF generation", "SendGrid"] },
+  { name: "Backend", items: ["Go (Gin)", "PostgreSQL", "REST API design", "PDF generation", "SendGrid", "Resend"] },
   { name: "Mobile", items: ["SwiftUI", "SwiftData", "React Native (Expo)", "TestFlight releases"] },
   { name: "Frontend", items: ["Next.js", "React", "Tailwind CSS", "TypeScript"] },
   { name: "Infra & tools", items: ["Docker", "Azure Container Apps", "Vercel", "Git", "Razorpay"] },
